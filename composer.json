@@ -1,5 +1,5 @@
 {
-    "name": "tigrov/yii2-kendoui",
+    "name": "pitcher/yii2-kendoui",
     "description": "Kendo UI Extension for Yii 2",
     "keywords": ["yii2", "kendo", "kendoui", "datasource"],
     "type": "yii2-extension",
