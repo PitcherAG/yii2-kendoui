@@ -176,7 +176,7 @@ abstract class Action extends \yii\base\Action
         }
 
         $query = $this->getActiveQuery();
-        $query->andWhere($keysData);
+        $query->where($keysData);
 
         return $query->one();
     }
