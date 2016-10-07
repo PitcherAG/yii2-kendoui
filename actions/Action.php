@@ -197,9 +197,7 @@ abstract class Action extends \yii\base\Action
      */
     public function getModelData($model)
     {
-        $data = $this->getExtendMode()
-            ? $model->toArray($this->getAttributes(), $this->getExtraFields())
-            : $model->getAttributes($this->attributeNames, $this->exceptAttributes);
+        $data = $model->toArray($this->getAttributes(), $this->getExtraFields());
 
         if (count($keys = $model::primaryKey()) > 1) {
             $data[implode($this->keySeparator, $keys)] = implode($this->keySeparator, $model->getPrimaryKey(true));
