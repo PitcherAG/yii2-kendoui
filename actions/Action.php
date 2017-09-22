@@ -52,7 +52,7 @@ abstract class Action extends \yii\base\Action
      */
     public $_extendMode = false;
 
-    public $translateCategory = 'kendoui';
+    public $translateCategory = 'app';
 
     private $_modelClass;
     private $_modelInstance;
@@ -99,7 +99,6 @@ abstract class Action extends \yii\base\Action
     public function init()
     {
         parent::init();
-        $this->registerTranslations();
     }
 
     /**
@@ -110,16 +109,6 @@ abstract class Action extends \yii\base\Action
         \Yii::$app->response->format = $this->responseFormat;
 
         return $this->getResponseData();
-    }
-
-    public function registerTranslations()
-    {
-        if (\Yii::$app->has('i18n')) {
-            $i18n = \Yii::$app->i18n;
-            $i18n->translations[$this->translateCategory] = [
-                'class' => 'yii\i18n\PhpMessageSource',
-            ];
-        }
     }
 
     public function t($message, $params = [])
